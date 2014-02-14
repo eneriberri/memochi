@@ -1,4 +1,6 @@
 <form action="<%= url %>" method="<%= method %>">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  
   <label for="email">Email</label>
   <input type="text" name="user[email]" id="email">
   
