@@ -1,0 +1,21 @@
+<h1>Create Memo</h1>
+
+<form action="<%= memos_url %> " method="POST" accept-charset="utf-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  
+  <input type="hidden" name="memo[user_id]" value="<%= current_user.id %>">
+  
+  <label for="text">Text</label>
+  <textarea rows="4" cols="50" name="memo[text]" placeholder="Write your memo here." id="text" autofocus></textarea>
+  <br>
+  
+  <!-- <label for="background">Background</label>
+  <input type="color" name="background" value="" id="background">
+  <br> -->
+  
+  <label for="private">Private?</label>
+  <input type="checkbox" name="memo[private]" value="true" id="private">
+  
+
+  <p><input type="submit" value="Create Memo"></p>
+</form>

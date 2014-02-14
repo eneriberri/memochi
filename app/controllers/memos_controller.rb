@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_filter :require_current_user, :except => [:index]
   
   def index
-    render :index
+    @memos = Memo.all
   end
   
   def new
