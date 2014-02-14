@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140214042526) do
+ActiveRecord::Schema.define(:version => 20140214044534) do
+
+  create_table "memos", :force => true do |t|
+    t.string   "text"
+    t.boolean  "private",    :default => false
+    t.integer  "user_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "memos", ["user_id"], :name => "index_memos_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"

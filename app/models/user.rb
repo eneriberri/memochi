@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, :presence => true
   validates :password, :length => {:minimum => 6, :allow_nil => true}
   
+  has_many :memos
+  
   def self.find_by_credentials(options)
     user = User.find_by_email(options[:email])
     return user if user && user.is_password?(options[:password])

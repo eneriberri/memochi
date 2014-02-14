@@ -2,7 +2,7 @@ class CreateMemos < ActiveRecord::Migration
   def change
     create_table :memos do |t|
       t.string :text
-      t.string :background
+      t.boolean :private, :default => false
       t.integer :user_id
       
       t.timestamps
