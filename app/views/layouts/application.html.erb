@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Memochi</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <% unless current_user %>
-    <%= link_to "Log In", new_session_url %>
-  <% else %>
-    Hi, <%= current_user.email %>.
-    <br>
-    <%= link_to "Log Out", session_url, :method => :delete %>
-    <p></p>
-  <% end %>
-  
-<%= yield %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</body>
+    <title><%= content_for?(:title) ? yield(:title) : "Memochi" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="row">
+    <% unless current_user %>
+      <%= link_to "Log In", new_session_url %>
+    <% else %>
+      Hi, <%= current_user.email %>.
+      <br>
+      <%= link_to "Log Out", session_url, :method => :delete %>
+      <p></p>
+    <% end %>
+
+    <%= yield %>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

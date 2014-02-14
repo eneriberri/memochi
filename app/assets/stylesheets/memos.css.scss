@@ -12,7 +12,14 @@ textarea {
   height: $textarea-size;
   resize: none;
   font-size: $textarea-font-size;
+  margin: 0 auto;
+  box-shadow: none;
+  transition: none;
+  
   &:focus {
     outline: none;
+    background-color: transparent;
+    box-shadow: none;
+    transition: none;
   }
 }
