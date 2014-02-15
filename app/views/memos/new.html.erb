@@ -5,13 +5,86 @@
   
   <input type="hidden" name="memo[user_id]" value="<%= current_user.id %>">
   
-  <label for="text">Text</label>
-  <textarea rows="4" cols="50" name="memo[text]" placeholder="Write your memo here." id="text" autofocus></textarea>
-  <br>
-  
   <!-- <label for="background">Background</label>
-  <input type="color" name="background" value="" id="background">
+  <input type="color" name="background" id="background">
   <br> -->
+    
+    <input type="hidden" name="myDoc">
+    <div id="toolBar1">
+      <div class="row">
+        <div class="large-3 columns pusher">...
+        </div>
+       <div class="large-3 columns">
+         <select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
+         <option class="heading" selected>Font</option>
+         <option>Arial</option>
+         <option>Arial Black</option>
+         <option>Courier New</option>
+         <option>Times New Roman</option>
+         </select>
+       </div>
+ 
+        <!-- Font Size -->
+        <div class="large-3 columns">
+          <select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option class="heading" selected>Size</option>
+          <option value="1">Very small</option>
+          <option value="2">A bit small</option>
+          <option value="3">Smaller</option>
+          <option value="4">Medium</option>
+          <option value="5">Normal</option>
+          <option value="6">Bigger</option>
+          <option value="7">Maximum</option>
+          </select>
+        </div>
+        <div class="large-3 columns pusher">...
+        </div>
+      </div>
+      
+      <div class="row">
+  <div class="large-3 columns pusher">...
+  </div>
+        <div class="large-3 columns">
+          <select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option class="heading" selected>Color</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          </select>
+        </div>
+  
+        <div class="large-3 columns">
+          <select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;">
+          <option class="heading" selected>Background</option>
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="black">Black</option>
+          <option value="yellow">Yellow</option>
+          <option value="white">White</option>
+          </select>
+        </div>
+        
+        <div class="large-3 columns pusher">...
+        </div>
+      </div>
+    </div>
+    <div id="toolBar2">
+
+    <img class="intLink" title="Bold" onclick="formatDoc('bold');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAInhI+pa+H9mJy0LhdgtrxzDG5WGFVk6aXqyk6Y9kXvKKNuLbb6zgMFADs=" />
+    <img class="intLink" title="Italic" onclick="formatDoc('italic');" src="data:image/gif;base64,R0lGODlhFgAWAKEDAAAAAF9vj5WIbf///yH5BAEAAAMALAAAAAAWABYAAAIjnI+py+0Po5x0gXvruEKHrF2BB1YiCWgbMFIYpsbyTNd2UwAAOw==" />
+    <img class="intLink" title="Underline" onclick="formatDoc('underline');" src="data:image/gif;base64,R0lGODlhFgAWAKECAAAAAF9vj////////yH5BAEAAAIALAAAAAAWABYAAAIrlI+py+0Po5zUgAsEzvEeL4Ea15EiJJ5PSqJmuwKBEKgxVuXWtun+DwxCCgA7" />
+    <img class="intLink" title="Strikethrough" onclick="formatDoc('strikeThrough');" src="data:image/gif;base64,R0lGODlhFgAWAKECAAAAAF9vj////////yH5BAEAAAIALAAAAAAWABYAAAIrlI+py+0Po5zUgAsEzvEeL4Ea15EiJJ5PSqJmuwKBEKgxVuXWtun+DwxCCgA7" />
+    <img class="intLink" title="Left align" onclick="formatDoc('justifyleft');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JMGELkGYxo+qzl4nKyXAAAOw==" />
+    <img class="intLink" title="Center align" onclick="formatDoc('justifycenter');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIfhI+py+0Po5y02ouz3jL4D4JOGI7kaZ5Bqn4sycVbAQA7" />
+    <img class="intLink" title="Right align" onclick="formatDoc('justifyright');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JQGDLkGYxouqzl43JyVgAAOw==" />
+    <img class="intLink" title="Add indentation" onclick="formatDoc('outdent');" src="data:image/gif;base64,R0lGODlhFgAWAMIHAAAAADljwliE35GjuaezxtDV3NHa7P///yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKCQG9F2i7u8agQgyK1z2EIBil+TWqEMxhMczsYVJ3e4ahk+sFnAgtxSQDqWw6n5cEADs=" />
+    <img class="intLink" title="Delete indentation" onclick="formatDoc('indent');" src="data:image/gif;base64,R0lGODlhFgAWAOMIAAAAADljwl9vj1iE35GjuaezxtDV3NHa7P///////////////////////////////yH5BAEAAAgALAAAAAAWABYAAAQ7EMlJq704650B/x8gemMpgugwHJNZXodKsO5oqUOgo5KhBwWESyMQsCRDHu9VOyk5TM9zSpFSr9gsJwIAOw==" />
+    <img class="intLink" title="Hyperlink" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}" src="data:image/gif;base64,R0lGODlhFgAWAOMKAB1ChDRLY19vj3mOrpGjuaezxrCztb/I19Ha7Pv8/f///////////////////////yH5BAEKAA8ALAAAAAAWABYAAARY8MlJq7046827/2BYIQVhHg9pEgVGIklyDEUBy/RlE4FQF4dCj2AQXAiJQDCWQCAEBwIioEMQBgSAFhDAGghGi9XgHAhMNoSZgJkJei33UESv2+/4vD4TAQA7" />
+
+    </div>
+    <div id="textBox" name="memo[text]" contenteditable="true" autofocus>Write your memo here.</div>
   
   <label for="private">Private?</label>
   <input type="checkbox" name="memo[private]" value="true" id="private">
@@ -19,3 +92,22 @@
 
   <p><input type="submit" value="Create Memo"></p>
 </form>
+
+
+
+<script>
+var oDoc, sDefTxt;
+
+function initDoc() {
+  oDoc = document.getElementById("textBox");
+  sDefTxt = oDoc.innerHTML;
+  oDoc.focus();
+}
+
+function formatDoc(sCmd, sValue) {
+  document.execCommand(sCmd, false, sValue);
+  oDoc.focus();
+}
+
+initDoc();
+</script>

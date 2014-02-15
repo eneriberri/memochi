@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-$textarea-size: 350px;
+$textarea-size: 375px;
 $textarea-font-size: 24px;
 
-textarea {
+#textBox {
   border: none;
   width: $textarea-size;
   height: $textarea-size;
@@ -15,6 +15,7 @@ textarea {
   margin: 0 auto;
   box-shadow: none;
   transition: none;
+  text-align: left;
   
   &:focus {
     outline: none;
@@ -22,4 +23,8 @@ textarea {
     box-shadow: none;
     transition: none;
   }
+}
+
+.pusher {
+  color: white;
 }
