@@ -10,12 +10,15 @@ $textarea-font-size: 24px;
   border: none;
   width: $textarea-size;
   height: $textarea-size;
-  resize: none;
+  overflow: auto;
   font-size: $textarea-font-size;
   margin: 0 auto;
   box-shadow: none;
   transition: none;
   text-align: left;
+  color: #bababa;
+  margin-top: 10px;
+  margin-bottom: 10px;
   
   &:focus {
     outline: none;
@@ -27,4 +30,9 @@ $textarea-font-size: 24px;
 
 .pusher {
   color: white;
+}
+
+select {
+  border: none;
+  outline: none;
 }

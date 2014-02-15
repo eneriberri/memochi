@@ -12,8 +12,7 @@
     <input type="hidden" name="myDoc">
     <div id="toolBar1">
       <div class="row">
-        <div class="large-3 columns pusher">...
-        </div>
+        <div class="large-3 columns pusher">...</div>
        <div class="large-3 columns">
          <select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
          <option class="heading" selected>Font</option>
@@ -37,13 +36,11 @@
           <option value="7">Maximum</option>
           </select>
         </div>
-        <div class="large-3 columns pusher">...
-        </div>
+        <div class="large-3 columns pusher">...</div>
       </div>
       
       <div class="row">
-  <div class="large-3 columns pusher">...
-  </div>
+        <div class="large-3 columns pusher">...</div>
         <div class="large-3 columns">
           <select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;">
           <option class="heading" selected>Color</option>
@@ -66,8 +63,7 @@
           </select>
         </div>
         
-        <div class="large-3 columns pusher">...
-        </div>
+        <div class="large-3 columns pusher">...</div>
       </div>
     </div>
     <div id="toolBar2">
@@ -110,4 +106,12 @@ function formatDoc(sCmd, sValue) {
 }
 
 initDoc();
+
+$(document).ready(function() {
+  $('#textBox').keypress(function(e) {
+    $(this).empty();
+    $(this).css('color', 'black');
+    $(this).unbind('keypress');
+  });
+})
 </script>
