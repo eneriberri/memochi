@@ -9,74 +9,71 @@
     <div id="toolBar1">
       <div class="row">
         <div class="large-3 columns pusher">...</div>
-       <div class="large-3 columns">
-         
-         <a href="#" data-dropdown="drop" class="button dropdown">Fonts</a><br>
-         <ul id="drop" data-dropdown-content class="f-dropdown fontdrop">
+        <div class="large-3 columns">         
+         <!-- Font Face -->
+         <a href="#" data-dropdown="drop1" class="button tiny expand dropdown">Fonts</a><br>
+         <ul id="drop1" data-dropdown-content class="f-dropdown font-drop">
            <li><a href="#">Arial</a></li>
            <li><a href="#">Arial Black</a></li>
            <li><a href="#">Courier New</a></li>
+           <li><a href="#">Times New Roman</a></li>
+           <li><a href="#">Gilda Display</a></li>
+           <li><a href="#">Lily Script One</a></li>
          </ul>
-         
-         <!-- <select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
-         <option class="heading" selected>Font</option>
-         <option>Arial</option>
-         <option>Arial Black</option>
-         <option>Courier New</option>
-         <option>Times New Roman</option>
-         <option>Gilda Display</option>
-         <option>Lily Script One</option>
-         </select> -->
        </div>
  
         <!-- Font Size -->
         <div class="large-3 columns">
-          <select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;">
-          <option class="heading" selected>Size</option>
-          <option value="1">Very small</option>
-          <option value="2">A bit small</option>
-          <option value="3">Smaller</option>
-          <option value="4">Medium</option>
-          <option value="5">Normal</option>
-          <option value="6">Bigger</option>
-          <option value="7">Maximum</option>
-          </select>
+          <a href="#" data-dropdown="drop2" class="button tiny expand dropdown">Size</a><br>
+          <ul id="drop2" data-dropdown-content class="f-dropdown fontsize-drop tiny">
+            <li><a data-val="1" href="#">Very small</a></li>
+            <li><a data-val="2" href="#">A bit small</a></li>
+            <li><a data-val="3" href="#">Smaller</a></li>
+            <li><a data-val="4" href="#">Medium</a></li>
+            <li><a data-val="5" href="#">Normal</a></li>
+            <li><a data-val="6" href="#">Bigger</a></li>
+            <li><a data-val="7" href="#">Maximum</a></li>
+          </ul>
         </div>
+    
         <div class="large-3 columns pusher">...</div>
       </div>
       
       <div class="row">
         <div class="large-3 columns pusher">...</div>
+        
+        <!-- Font Color -->
         <div class="large-3 columns">
-          <select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;">
-          <option class="heading" selected>Color</option>
-          <option value="red">Red</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="black">Black</option>
-          <option value="white">White</option>
-          </select>
+          <a href="#" data-dropdown="drop3" class="button tiny expand dropdown">Color</a><br>
+          <ul id="drop3" data-dropdown-content class="f-dropdown fontcolor-drop tiny">
+            <li><a href="#">Red</a></li>
+            <li><a href="#">Blue</a></li>
+            <li><a href="#">Green</a></li>
+            <li><a href="#">Black</a></li>
+            <li><a href="#">White</a></li>
+          </ul>  
         </div>
   
+        <!-- Background Color -->
         <div class="large-3 columns">
-          <select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;">
-          <option class="heading" selected>Background</option>
-          <option value="red">Red</option>
-          <option value="green">Green</option>
-          <option value="black">Black</option>
-          <option value="yellow">Yellow</option>
-          <option value="white">White</option>
-          </select>
+          <a href="#" data-dropdown="drop4" class="button tiny expand dropdown">Background</a><br>
+          <ul id="drop4" data-dropdown-content class="f-dropdown bgcolor-drop tiny">
+            <li><a href="#">Red</a></li>
+            <li><a href="#">Blue</a></li>
+            <li><a href="#">Green</a></li>
+            <li><a href="#">Black</a></li>
+            <li><a href="#">White</a></li>
+          </ul>
         </div>
         
         <div class="large-3 columns pusher">...</div>
       </div>
       
-      <div class="row">
+      <!-- <div class="row">
         <input type="color" name="background" id="background"
     onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;">
         <br>
-      </div>
+      </div> -->
     </div>
     <div id="toolBar2">
 
@@ -117,17 +114,32 @@ function formatDoc(sCmd, sValue) {
   oDoc.focus();
 }
 
-initDoc();
-
 $(document).ready(function() {
+  initDoc();
+  
   $('#textBox').keypress(function(e) {
     $(this).empty();
     $(this).unbind('keypress');
   });
   
-  $('.fontdrop').on('click', 'li', function(e) {
+  $('.font-drop').on('click', 'li', function(e) {
     var fontName = $(e.target).text();
     formatDoc('fontname',fontName);
-  })         
+  }); 
+  
+  $('.fontsize-drop').on('click', 'li', function(e) {
+    var fontSize = $(e.target).data('val');
+    formatDoc('fontsize',fontSize);
+  });  
+  
+  $('.fontcolor-drop').on('click', 'li', function(e) {
+    var fontColor = $(e.target).text();
+    formatDoc('forecolor',fontColor);
+  }); 
+  
+  $('.bgcolor-drop').on('click', 'li', function(e) {
+    var bgColor = $(e.target).text();
+    formatDoc('backcolor',bgColor);
+  });     
 })
 </script>

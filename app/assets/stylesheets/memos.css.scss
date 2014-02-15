@@ -59,3 +59,15 @@ $color-size: 35px;
   width: $color-size;
   height: $color-size;
 }
+
+a {
+  text-align: left;
+}
+
+.f-dropdown {
+  text-align: left;
+  opacity: .5;
+  li a {
+    color: black;
+  }
+}
