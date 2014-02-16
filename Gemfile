@@ -32,6 +32,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'backbone-on-rails'
 gem 'ejs'
 gem 'foundation-rails'
+gem 'font-awesome-sass'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
