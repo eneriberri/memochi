@@ -6,7 +6,7 @@
 $textarea-size: 480px;
 $textarea-font-size: 24px;
 
-@import url(http://fonts.googleapis.com/css?family=Gilda+Display|Lily+Script+One|PT+Serif+Caption|Gabriela|Varela+Round);
+@import url(http://fonts.googleapis.com/css?family=Gilda+Display|Lily+Script+One|Allura|Frijole|Gabriela|Varela+Round|Montserrat|Lemon|Dr+Sugiyama|Architects+Daughter);
 
 @font-face {
   font-family:'icofonts';
@@ -20,7 +20,7 @@ $textarea-font-size: 24px;
 }  
 
 #textBox {
-  border: 2px solid #efefef;
+  border: 5px solid #efefef;
   width: $textarea-size;
   height: $textarea-size - 70px;
   overflow: auto;
@@ -89,4 +89,17 @@ a {
 .title-area .name a {
   cursor: default;
   color: #8c8c8c;
+}
+
+.icon {
+  color: #595959;
+  margin: 0 5px 0 5px;
+  &:hover {
+   color: #3d3d3d; 
+  }
+}
+
+#toolBar2 {
+  background-color: #efefef;
+  padding: 7px;
 }

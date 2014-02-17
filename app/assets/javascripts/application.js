@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require jscolor
+//= require pick-a-color
+//= require tinycolor-0.9.15.min
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

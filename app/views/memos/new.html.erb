@@ -23,31 +23,37 @@
                  <a href="#">Font</a>
                  <ul class="dropdown">
                    <li class="has-dropdown not-click">
-                     <a href="#">Serif</a>
-                     <ul class="dropdown">
-                       <li><a href="#">Arial</a></li>
-                       <li><a href="#">Arial Black</a></li>
-                     </ul>
-                   </li>
+                       <a href="#">Serif</a>
+                       <ul class="dropdown">
+                         <li><a href="#">Times New Roman</a></li>
+                         <li><a href="#">Courier New</a></li>
+                         <li><a href="#">Gabriela</a></li>
+                         <li><a href="#">Gilda Display</a></li>
+                       </ul>
+                     </li>
                    <li class="has-dropdown not-click">
                      <a href="#">Sans Serif</a>
                      <ul class="dropdown">
-                       <li><a href="#">Times New Roman</a></li>
-                       <li><a href="#">Courier New</a></li>
+                       <li><a href="#">Arial</a></li>
+                       <li><a href="#">Arial Black</a></li>
+                       <li><a href="#">Varela Round</a></li>
+                       <li><a href="#">Montserrat</a></li>
                      </ul>
                    </li>
                    <li class="has-dropdown not-click">
                      <a href="#">Display</a>
                      <ul class="dropdown">
-                       <li><a href="#">White</a></li>
-                       <li><a href="#">White</a></li>
+                       <li><a href="#">Lily Script One</a></li>
+                       <li><a href="#">Lemon</a></li>
+                       <li><a href="#">Frijole</a></li>
                      </ul>
                    </li>
                    <li class="has-dropdown not-click">
                      <a href="#">Handwriting</a>
                      <ul class="dropdown">
-                       <li><a href="#">White</a></li>
-                       <li><a href="#">White</a></li>
+                       <li><a href="#">Allura</a></li>
+                       <li><a href="#">Architects Daughter</a></li>
+                       <li><a href="#">Dr Sugiyama</a></li>
                      </ul>
                    </li>
                  </ul>
@@ -211,11 +217,14 @@
       
        </div>
     
-        <div class="large-3 columns pusher">...</div>
+        <div class="large-3 columns"><input type="text" value="000" name="border-color" class="pick-a-color"></div>
       </div>
     
     </div>
     <br>
+    <div class="row">
+      <div class="large-3 columns pusher">...</div>
+      <div class="large-6 columns pusher">
     <div id="toolBar2">
     <a class="icon" href="#"><i class="fa fa-bold" onclick="formatDoc('bold');"></i></a>
     <a class="icon" href="#"><i class="fa fa-italic" onclick="formatDoc('italic');"></i></a>
@@ -227,7 +236,11 @@
     <a class="icon" href="#"><i class="fa fa-outdent" onclick="formatDoc('outdent');"></i></a>
     <a class="icon" href="#"><i class="fa fa-indent" onclick="formatDoc('indent');"></i></a>
     <a class="icon" href="#"><i class="fa fa-link" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}" src="data:image/gif;base64,R0lGODlhFgAWAOMKAB1ChDRLY19vj3mOrpGjuaezxrCztb/I19Ha7Pv8/f///////////////////////yH5BAEKAA8ALAAAAAAWABYAAARY8MlJq7046827/2BYIQVhHg9pEgVGIklyDEUBy/RlE4FQF4dCj2AQXAiJQDCWQCAEBwIioEMQBgSAFhDAGghGi9XgHAhMNoSZgJkJei33UESv2+/4vD4TAQA7"></i></a>
+        <a class="icon" href="#"><i class="fa fa-chain-broken" onclick="formatDoc('unlink')"></i></a>
     </div>
+  </div>
+  <div class="large-3 columns pusher">...</div>
+</div>
     <div id="textBox" name="memo[text]" contenteditable="true" autofocus><span style="color:#bababa;">Write your memo here.</span></div>
   
   <label for="private">Private?</label>
@@ -280,6 +293,21 @@ $(document).ready(function() {
     var bgColor = $(e.target).text();
     formatDoc('backcolor',bgColor);
   }); 
+   
+  
+  $(".pick-a-color").pickAColor({showBasicColors: false, showSavedColors: false});
+  
+  $(".pick-a-color").on('change', function(e) {
+    var bgColor = $(e.target).val();
+    formatDoc('backcolor',bgColor);
+  });
+  
+  
+  //keeps focus on highlighted text if user clicks on tab of color picker
+  $('.tab').wrap('<a href="#"></a>'); 
+  $('.color-preview').wrap('<a href="#"></a>'); 
+  $('.color-label').wrap('<a href="#"></a>'); 
+  $('.color-box').wrap('<a href="#"></a>'); 
   
   
 })
