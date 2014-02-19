@@ -1,1 +1,38 @@
 Memochi
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">My Site</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+      <li><a href="#">Hm</a>
+      <li>
+        <a href="#">Color<input type="text" value="000" name="border-color" class="pick-a-color"></a>
+      </li>
+    </ul>
+  </section>
+</nav>
+<p></p>
+<input type="text" id="input-text" placeholder="O_O">
+<p></p>
+  <div class="row">
+    <div class="small-6 columns">
+  <label class="right inline">Color:</label>
+    </div>
+  <div class="small-6 columns">
+    <a href="#"><input type="text" value="000" name="border-color" class="pick-a-color"></a>
+  </div>
+  <!-- Color<input type="text" value="000" name="border-color" class="pick-a-color"></a> -->
+</div>
+<script>
+$(document).ready(function() {
+    $(".pick-a-color").pickAColor({showBasicColors: false, showSavedColors: false});
+})
+</script>

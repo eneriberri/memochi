@@ -11,7 +11,7 @@
  *= require_self
  *= require foundation_and_overrides
  *= require font-awesome
- *= require bootstrap-2.2.2.min
+ *= require bootstrap-2.2.2
  *= require pick-a-color-1.1.8.min
  *= require_tree .
  */
