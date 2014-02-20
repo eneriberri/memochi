@@ -8,7 +8,7 @@
     <input type="hidden" name="myDoc">
     <div id="toolBar1">
       <div class="row">
-        <div class="large-3 columns pusher">...</div>
+        <div class="large-3 columns pusher">.</div>
         <div class="large-6 columns">         
          <!-- Font Face -->
          <nav class="top-bar" data-topbar>
@@ -17,10 +17,10 @@
                
 
              <ul class="left">
-               <li class="divider"></li> 
+               
                <!-- Font -->
                <li class="has-dropdown font-drop">
-                 <a href="#">Font</a>
+                 <a href="#">Font Style</a>
                  <ul class="dropdown">
                    <li class="has-dropdown not-click">
                        <a href="#">Serif</a>
@@ -59,10 +59,13 @@
                  </ul>
                </li>
                
+               
+               
+               
                <li class="divider"></li>
                <!-- Size -->
                <li class="has-dropdown">
-                 <a href="#">Size</a>
+                 <a href="#">Font Size</a>
                  <ul class="dropdown fontsize-drop">
                    <li><a data-val="1" href="#">Very small</a></li>
                    <li><a data-val="2" href="#">A bit small</a></li>
@@ -72,7 +75,28 @@
                    <li><a data-val="6" href="#">Bigger</a></li>
                    <li><a data-val="7" href="#">Maximum</a></li>
                  </ul>
-               </li>
+               </li> 
+               
+               
+               
+               
+               <li class="divider"></li>
+               <li class="has-dropdown">
+                 <a href="#">Background Image</a>
+
+                 
+                 <ul class="dropdown">
+                   <li>
+                       <a href="#">Upload Image</a>
+                     </li>
+                   <li class="has-dropdown not-click">
+                     <a href="#">Insert Image URL</a>
+                     <ul class="dropdown">
+                       <li><input type="text" placeholder="Insert img URL here..."></li>
+                     </ul>
+                   </li>
+                 </ul>
+               </li>  
                
                
                
@@ -88,28 +112,25 @@
                <li>
                  <input type="text" value="fff" name="border-color" class="pick-a-color bgcolor-drop">
                </li> 
-               <li class="divider"></li>              
+               
+          
+               
+               
+         
              </ul>
              
              
-             
-             <ul class="title-area right">
-                 <li class="name">
-                   <a href="#">memochi</a>
-                 </li>
-               </ul>
            </section>
          </nav>
       
        </div>
     
-        <div class="large-3 columns pusher">...</div>
-      </div>
+        <div class="large-3 columns pusher">.</div>
     
     </div>
     <br>
     <div class="row">
-      <div class="large-3 columns pusher">...</div>
+      <div class="large-3 columns pusher">.</div>
       <div class="large-6 columns pusher">
     <div id="toolBar2">
     <a class="icon" href="#"><i class="fa fa-bold" onclick="formatDoc('bold');"></i></a>
@@ -121,17 +142,38 @@
     <a class="icon" href="#"><i class="fa fa-align-right" onclick="formatDoc('justifyright');"></i></a>
     <a class="icon" href="#"><i class="fa fa-outdent" onclick="formatDoc('outdent');"></i></a>
     <a class="icon" href="#"><i class="fa fa-indent" onclick="formatDoc('indent');"></i></a>
-    <a class="icon" href="#"><i class="fa fa-link" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}" src="data:image/gif;base64,R0lGODlhFgAWAOMKAB1ChDRLY19vj3mOrpGjuaezxrCztb/I19Ha7Pv8/f///////////////////////yH5BAEKAA8ALAAAAAAWABYAAARY8MlJq7046827/2BYIQVhHg9pEgVGIklyDEUBy/RlE4FQF4dCj2AQXAiJQDCWQCAEBwIioEMQBgSAFhDAGghGi9XgHAhMNoSZgJkJei33UESv2+/4vD4TAQA7"></i></a>
-        <a class="icon" href="#"><i class="fa fa-chain-broken" onclick="formatDoc('unlink')"></i></a>
+    <a class="icon" href="#"><i class="fa fa-link" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}"></i></a>
+    <a class="icon" href="#"><i class="fa fa-chain-broken" onclick="formatDoc('unlink')"></i></a>
+    <a class="icon" href="#"><i class="fa fa-upload" onclick="var sLnk=prompt('Insert the image URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('insertImage',sLnk)}"></i></a> 
     </div>
   </div>
-  <div class="large-3 columns pusher">...</div>
+  <div class="large-3 columns pusher">.</div>
 </div>
     <div id="textBox" name="memo[text]" contenteditable="true" autofocus><span style="color:#bababa;">Write your memo here.</span></div>
   
-  <label for="private">Private?</label>
-  <input type="checkbox" name="memo[private]" value="true" id="private">
+   
+   <div class="row">
+      <div class="large-3 columns pusher">.</div>
+     <div class="large-1 columns">
+          <i class="fa fa-tags"></i>
+     </div>
+   <div class="large-5 columns">
+     <input type="text" name="memo[tag]" placeholder="Insert any tags here separated by commas..." id="private" class="left">
+   </div>
+    <div class="large-3 columns pusher">.</div>
+   </div>
   
+  
+  <div class="row">
+     <div class="large-3 columns pusher">.</div>
+    <div class="large-3 columns">
+      <label for="private" class="right">Private?</label>
+    </div>
+  <div class="large-3 columns">
+    <input type="checkbox" name="memo[private]" value="true" id="private" class="left">
+  </div>
+   <div class="large-3 columns pusher">.</div>
+  </div>
 
   <p><input type="submit" value="Create Memo" class="button"></p>
 </form>
@@ -169,17 +211,6 @@ $(document).ready(function() {
     var fontSize = $(e.target).data('val');
     formatDoc('fontsize',fontSize);
   });  
-  
-  // $('.fontcolor-drop').on('click', 'li', function(e) {
-  //   var fontColor = $(e.target).text();
-  //   formatDoc('forecolor',fontColor);
-  // }); 
-  // 
-  // $('.bgcolor-drop').on('click', 'li', function(e) {
-  //   var bgColor = $(e.target).text();
-  //   formatDoc('backcolor',bgColor);
-  // }); 
-  //  
   
   $(".pick-a-color").pickAColor({showBasicColors: false, showSavedColors: false});
   
