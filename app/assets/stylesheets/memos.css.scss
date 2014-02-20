@@ -21,20 +21,7 @@ body {
 //  background-image: -webkit-linear-gradient(right bottom, #C1E0EB 0%, #E6D7C8 50%);
 //  background-image: -ms-linear-gradient(right bottom, #C1E0EB 0%, #E6D7C8 50%);
 //  background-image: linear-gradient(to right bottom, #C1E0EB 0%, #E6D7C8 50%);
-
-background-image: -webkit-gradient(
-	linear,
-	left top,
-	right bottom,
-	color-stop(0.5, #DBDBDB),
-	color-stop(0.5, #FFFFFF)
-);
-background-image: -o-linear-gradient(right bottom, #DBDBDB 50%, #FFFFFF 50%);
-background-image: -moz-linear-gradient(right bottom, #DBDBDB 50%, #FFFFFF 50%);
-background-image: -webkit-linear-gradient(right bottom, #DBDBDB 50%, #FFFFFF 50%);
-background-image: -ms-linear-gradient(right bottom, #DBDBDB 50%, #FFFFFF 50%);
-background-image: linear-gradient(to right bottom, #DBDBDB 50%, #FFFFFF 50%);
-//  background-image: url('tile.jpg');
+  background-image: url('concrete_wall.png');
 }
 
 $bar-border-color: #D4C39B;

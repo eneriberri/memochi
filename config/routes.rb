@@ -1,5 +1,5 @@
 Memochi::Application.routes.draw do
-  root :to => "StaticPages#home"
+  root :to => "StaticPages#index"
   
   resources :users
   resources :memos, :except => [:edit, :update]
