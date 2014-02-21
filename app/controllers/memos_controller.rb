@@ -20,7 +20,7 @@ class MemosController < ApplicationController
       redirect_to memo_url(@memo)
     else
       flash.now[:errors] = @memo.errors.full_messages
-      redirect_to :new
+      render :new
     end
   end
   

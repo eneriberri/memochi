@@ -149,6 +149,7 @@
   </div>
   <div class="large-3 columns pusher">.</div>
 </div>
+
     <div id="textBox" contenteditable="true" autofocus><span style="color:#bababa;">Write your memo here.</span></div>
     <input type="hidden" name="memo[text]" id="memo-text">
   
@@ -176,6 +177,8 @@
   </div>
    <div class="large-3 columns pusher">.</div>
   </div>
+  
+  <div id="test"></div>
 
   <p><input type="submit" value="Create Memo" class="button"></p>
 </form>
@@ -232,6 +235,8 @@ $(document).ready(function() {
   $('.color-preview').wrap('<a href="#"></a>'); 
   $('.color-label').wrap('<a href="#"></a>'); 
   $('.color-box').wrap('<a href="#"></a>');
+  
+  //grab html from div. set form to be memo's text
   $('form').on('submit', function() {
     $('input#memo-text').attr('value', $('#textBox').html());
   });

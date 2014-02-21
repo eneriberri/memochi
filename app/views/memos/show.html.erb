@@ -1,3 +1,14 @@
 <%= @memo.text %>
-<br>
+<div class="memo-content">
+  <% safe_tags = ['b', 'strong', 'i', 'em', 'div', 'blockquote', 'br', 'img', 'a', 'font']%>
+  <%= sanitize(@memo.text, tags: safe_tags, attributes: %w(style href face size color src)) %>
+</div>
+<p></p>
 <%= @memo.private %>
+
+<script>
+$(document).ready(function() {
+  
+});
+
+</script>
