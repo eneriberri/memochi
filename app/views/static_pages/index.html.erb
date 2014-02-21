@@ -1,11 +1,28 @@
 <h1>Memochi</h1>
 
-<div class="content">
-    
+<div class="row">
+  <div class="large-4 columns pusher">.</div>
+  <div class="large-4 columns">
+    <form action="<%= users_url %>" method="POST" accept-charset="utf-8">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="email" name="user[email]" id="email" placeholder="Email" autofocus>
+
+      <input type="password" name="user[password]" id="password" placeholder="Password">
+      
+      <p><input type="submit" value="Sign Up" class="button tiny"></p>
+    </form>
+  </div>
+
+<div class="large-4 columns pusher">.</div>
+
 </div>
 
+
+<div class="row">
+  <img src="/assets/hourglass.png" id="hg">
+</div>
 <script>
 $(document).ready(function() {
-    
+  $('#hg').css('height', window.innerHeight);
 })
 </script>

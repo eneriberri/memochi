@@ -17,10 +17,10 @@ class MemosController < ApplicationController
     @memo = Memo.new(params[:memo])
     
     if @memo.save
-      redirect_to @memo
+      redirect_to memo_url(@memo)
     else
       flash.now[:errors] = @memo.errors.full_messages
-      render :new
+      redirect_to :new
     end
   end
   

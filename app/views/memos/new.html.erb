@@ -131,7 +131,7 @@
     <br>
     <div class="row">
       <div class="large-3 columns pusher">.</div>
-      <div class="large-6 columns pusher">
+      <div class="large-6 columns">
     <div id="toolBar2">
     <a class="icon" href="#"><i class="fa fa-bold" onclick="formatDoc('bold');"></i></a>
     <a class="icon" href="#"><i class="fa fa-italic" onclick="formatDoc('italic');"></i></a>
@@ -149,7 +149,8 @@
   </div>
   <div class="large-3 columns pusher">.</div>
 </div>
-    <div id="textBox" name="memo[text]" contenteditable="true" autofocus><span style="color:#bababa;">Write your memo here.</span></div>
+    <div id="textBox" contenteditable="true" autofocus><span style="color:#bababa;">Write your memo here.</span></div>
+    <input type="hidden" name="memo[text]" id="memo-text">
   
    
    <!-- TAGS: to do -->
@@ -231,6 +232,9 @@ $(document).ready(function() {
   $('.color-preview').wrap('<a href="#"></a>'); 
   $('.color-label').wrap('<a href="#"></a>'); 
   $('.color-box').wrap('<a href="#"></a>');
+  $('form').on('submit', function() {
+    $('input#memo-text').attr('value', $('#textBox').html());
+  });
   
 })
 </script>

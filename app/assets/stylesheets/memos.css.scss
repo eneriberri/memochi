@@ -21,7 +21,7 @@ body {
 //  background-image: -webkit-linear-gradient(right bottom, #C1E0EB 0%, #E6D7C8 50%);
 //  background-image: -ms-linear-gradient(right bottom, #C1E0EB 0%, #E6D7C8 50%);
 //  background-image: linear-gradient(to right bottom, #C1E0EB 0%, #E6D7C8 50%);
-  background-image: url('concrete_wall.png');
+  background-image: url('tileblue.jpg');
 }
 
 $bar-border-color: #D4C39B;
@@ -52,6 +52,7 @@ $bar-border-color: #D4C39B;
 
 .pusher {
   color: #e2e2e2;
+  text-indent: -9999px;
 }
 
 select {
