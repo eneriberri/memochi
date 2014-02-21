@@ -1,10 +1,10 @@
-<%= @memo.text %>
 <div class="memo-content">
-  <% safe_tags = ['b', 'strong', 'i', 'em', 'div', 'blockquote', 'br', 'img', 'a', 'font']%>
-  <%= sanitize(@memo.text, tags: safe_tags, attributes: %w(style href face size color src)) %>
+  <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 
+                  'div', 'blockquote', 'br', 'img', 'font'] %>
+  <%= sanitize @memo.text, tags: safe_tags, attributes: %w(style face size color src) %>
 </div>
 <p></p>
-<%= @memo.private %>
+<a href="<%= new_memo_url %>"><button class="small">Create New Memo</button></a>
 
 <script>
 $(document).ready(function() {

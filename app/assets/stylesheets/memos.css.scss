@@ -26,7 +26,7 @@ body {
 
 $bar-border-color: #D4C39B;
 
-#textBox {
+#textBox, .memo-content {
   border: 4px solid $bar-border-color;
   width: $textarea-size + 5px;
   height: $textarea-size - 70px;
