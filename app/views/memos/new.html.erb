@@ -90,9 +90,9 @@
                        <a href="#">Upload Image</a>
                      </li>
                    <li class="has-dropdown not-click">
-                     <a href="#">Insert Image URL</a>
+                     <a href="#">Insert Image From URL</a>
                      <ul class="dropdown">
-                       <li><input type="text" placeholder="Insert img URL here..."></li>
+                       <li><input id="bgimg-input" type="text" placeholder="Paste URL here..." style="display: inline-block"><button class="tiny bgimg-url" style="display: inline-block">Enter</button></li>
                      </ul>
                    </li>
                  </ul>
@@ -234,9 +234,16 @@ $(document).ready(function() {
     if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('insertImage',sLnk)}
     
     var img = $('img[src="'+sLnk+'"]');
-    img.resizable();
+    img.wrap('<div class="wrapper" style="display: inline-block;"></div>');
+    img.resizable();    
   });
   
+  $('.bgimg-url').on('click', function(e) {
+    e.preventDefault();
+    var url = $('#bgimg-input').val();
+    console.log(url);
+    $('#textBox').css('background-image', 'url('+url+')');
+  });
   
   //keeps focus on highlighted text if user clicks on tab of color picker
   $('.tab').wrap('<a href="#"></a>'); 
