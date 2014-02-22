@@ -144,7 +144,7 @@
     <a class="icon" href="#"><i class="fa fa-indent" onclick="formatDoc('indent');"></i></a>
     <a class="icon" href="#"><i class="fa fa-link" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}"></i></a>
     <a class="icon" href="#"><i class="fa fa-chain-broken" onclick="formatDoc('unlink')"></i></a>
-    <a class="icon" href="#"><i class="fa fa-upload" onclick="var sLnk=prompt('Insert the image URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('insertImage',sLnk)}"></i></a> 
+    <a class="icon" href="#"><i class="fa fa-upload"></i></a> 
     </div>
   </div>
   <div class="large-3 columns pusher">.</div>
@@ -227,6 +227,14 @@ $(document).ready(function() {
   $(".bgcolor-drop").on('change', function(e) {
     var bgColor = $(e.target).val();
     formatDoc('backcolor',bgColor);
+  });
+  
+  $('.fa-upload').on('click', function(e) {    
+    var sLnk=prompt('Insert the image URL here','http:\/\/');
+    if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('insertImage',sLnk)}
+    
+    var img = $('img[src="'+sLnk+'"]');
+    img.resizable();
   });
   
   

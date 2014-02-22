@@ -13,6 +13,7 @@
  *= require font-awesome
  *= require bootstrap-2.2.2
  *= require pick-a-color-1.1.8.min
+ *= require jquery.ui.resizable
  *= require_tree .
  */
 

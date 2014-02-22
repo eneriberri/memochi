@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.resizable
+//= require jquery.ui.draggable
 //= require foundation
 //= require pick-a-color
 //= require tinycolor-0.9.15.min

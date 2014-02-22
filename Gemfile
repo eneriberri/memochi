@@ -33,3 +33,5 @@ gem 'backbone-on-rails'
 gem 'ejs'
 gem 'foundation-rails'
 gem 'font-awesome-sass'
+gem "paperclip", "~> 4.1"
+gem 'jquery-ui-rails'
