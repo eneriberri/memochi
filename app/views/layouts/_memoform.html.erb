@@ -1,0 +1,262 @@
+
+<form action="<%= url %> " method="POST" accept-charset="utf-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <% if method == "PUT" %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+  
+  <input type="hidden" name="memo[user_id]" value="<%= current_user.id %>">
+    
+    <input type="hidden" name="myDoc">
+    <div id="toolBar1">
+      <div class="row">
+        <div class="small-6 large-centered columns">         
+         <!-- Font Face -->
+         <nav class="top-bar" data-topbar>
+           <section class="top-bar-section">
+
+               
+
+             <ul class="left">
+               
+               <!-- Font -->
+               <li class="has-dropdown font-drop">
+                 <a href="#">Font Style</a>
+                 <ul class="dropdown">
+                   <li class="has-dropdown not-click">
+                       <a href="#">Serif</a>
+                       <ul class="dropdown">
+                         <li><a href="#">Times New Roman</a></li>
+                         <li><a href="#">Courier New</a></li>
+                         <li><a href="#">Gabriela</a></li>
+                         <li><a href="#">Gilda Display</a></li>
+                       </ul>
+                     </li>
+                   <li class="has-dropdown not-click">
+                     <a href="#">Sans Serif</a>
+                     <ul class="dropdown">
+                       <li><a href="#">Arial</a></li>
+                       <li><a href="#">Arial Black</a></li>
+                       <li><a href="#">Varela Round</a></li>
+                       <li><a href="#">Montserrat</a></li>
+                     </ul>
+                   </li>
+                   <li class="has-dropdown not-click">
+                     <a href="#">Display</a>
+                     <ul class="dropdown">
+                       <li><a href="#">Lily Script One</a></li>
+                       <li><a href="#">Lemon</a></li>
+                       <li><a href="#">Frijole</a></li>
+                     </ul>
+                   </li>
+                   <li class="has-dropdown not-click">
+                     <a href="#">Handwriting</a>
+                     <ul class="dropdown">
+                       <li><a href="#">Allura</a></li>
+                       <li><a href="#">Architects Daughter</a></li>
+                       <li><a href="#">Dr Sugiyama</a></li>
+                     </ul>
+                   </li>
+                 </ul>
+               </li>
+               
+               
+               
+               
+               <li class="divider"></li>
+               <!-- Size -->
+               <li class="has-dropdown">
+                 <a href="#">Font Size</a>
+                 <ul class="dropdown fontsize-drop">
+                   <li><a data-val="1" href="#">Very small</a></li>
+                   <li><a data-val="2" href="#">A bit small</a></li>
+                   <li><a data-val="3" href="#">Smaller</a></li>
+                   <li><a data-val="4" href="#">Medium</a></li>
+                   <li><a data-val="5" href="#">Normal</a></li>
+                   <li><a data-val="6" href="#">Bigger</a></li>
+                   <li><a data-val="7" href="#">Maximum</a></li>
+                 </ul>
+               </li> 
+               
+               
+               
+               
+               <li class="divider"></li>
+               <li class="has-dropdown">
+                 <a href="#">Background Image</a>
+
+                 
+                 <ul class="dropdown">
+                   <li>
+                       <a href="#">Upload Image</a>
+                     </li>
+                   <li class="has-dropdown not-click">
+                     <a href="#">Insert Image From URL</a>
+                     <ul class="dropdown">
+                       <li><input id="bgimg-input" type="text" name="memo[bg]" placeholder="Paste URL here..." style="display: inline-block"><button class="tiny bgimg-url" style="display: inline-block">Enter</button></li>
+                     </ul>
+                   </li>
+                 </ul>
+               </li>  
+               
+               
+               
+               <li class="divider"></li>
+               <!-- Font Color -->
+               <li>
+                 <input type="text" value="000" name="border-color" class="pick-a-color fontcolor-drop">
+               </li>
+               
+               
+               <li class="divider"></li>
+               <!-- BG Color -->
+               <li>
+                 <input type="text" value="fff" name="border-color" class="pick-a-color bgcolor-drop">
+               </li> 
+               
+          
+               
+               
+         
+             </ul>
+             
+             
+           </section>
+         </nav>
+      
+       </div>
+    
+     </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="small-6 large-centered columns">
+        <div id="toolBar2">
+    <a class="icon" href="#"><i class="fa fa-bold" onclick="formatDoc('bold');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-italic" onclick="formatDoc('italic');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-underline" onclick="formatDoc('underline');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-strikethrough" onclick="formatDoc('strikeThrough');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-align-left" onclick="formatDoc('justifyleft');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-align-center" onclick="formatDoc('justifycenter');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-align-right" onclick="formatDoc('justifyright');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-outdent" onclick="formatDoc('outdent');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-indent" onclick="formatDoc('indent');"></i></a>
+    <a class="icon" href="#"><i class="fa fa-link" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}"></i></a>
+    <a class="icon" href="#"><i class="fa fa-chain-broken" onclick="formatDoc('unlink')"></i></a>
+    <a class="icon" href="#"><i class="fa fa-upload"></i></a> 
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <div id="textBox" contenteditable="true"><span style="color:#333;">Write your memo here.</span></div>
+    <input type="hidden" name="memo[text]" id="memo-text">
+  </div>
+</div>
+   
+   <!-- TAGS: to do -->
+   <!-- <div class="row">
+      <div class="large-3 columns pusher">.</div>
+     <div class="large-1 columns">
+          <i class="fa fa-tags"></i>
+     </div>
+   <div class="large-5 columns">
+     <input type="text" name="memo[tag]" placeholder="Insert any tags here separated by commas..." id="private" class="left">
+   </div>
+    <div class="large-3 columns pusher">.</div>
+   </div> -->
+  
+  
+  <!-- <div class="row">
+    <div class="large-3 columns">
+      <label for="private" class="right">Private?</label>
+    </div>
+    <div class="large-3 columns">
+      <input type="checkbox" name="memo[private]" value="true" id="private" class="left">
+    </div>
+   <div class="large-3 columns pusher">.</div>
+  </div> -->
+  
+
+  <p><input type="submit" value="<%= submit %>" class="button"></p>
+</form>
+
+<div class="row">
+    <% flash.each do |name, msg| %>
+      <%= name %>: <%= msg %>
+      <p></p>
+    <% end %>
+</div>
+<script>
+var oDoc, sDefTxt;
+
+function initDoc() {
+  oDoc = document.getElementById("textBox");
+  sDefTxt = oDoc.innerHTML;
+  oDoc.focus();
+}
+
+function formatDoc(sCmd, sValue) {
+  document.execCommand(sCmd, false, sValue);
+  oDoc.focus();
+}
+
+$(document).ready(function() {
+  initDoc();
+  
+  $('#textBox').keypress(function(e) {
+    $(this).empty();
+    $(this).unbind('keypress');
+  });
+  
+  $('.font-drop').on('click', 'li', function(e) {
+    var fontName = $(e.target).text();
+    formatDoc('fontname',fontName);
+  }); 
+  
+  $('.fontsize-drop').on('click', 'li', function(e) {
+    var fontSize = $(e.target).data('val');
+    formatDoc('fontsize',fontSize);
+  });  
+  
+  $(".pick-a-color").pickAColor({showBasicColors: false, showSavedColors: false});
+  
+  $(".fontcolor-drop").on('change', function(e) {
+    var bgColor = $(e.target).val();
+    formatDoc('forecolor',bgColor);
+  });
+  
+  $(".bgcolor-drop").on('change', function(e) {
+    var bgColor = $(e.target).val();
+    formatDoc('backcolor',bgColor);
+  });
+  
+  $('.fa-upload').on('click', function(e) {    
+    var sLnk=prompt('Insert the image URL here','http:\/\/');
+    if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('insertImage',sLnk)}
+    
+    var img = $('img[src="'+sLnk+'"]');
+    img.wrap('<div class="wrapper" style="display: inline-block;"></div>');
+    img.resizable();    
+  });
+  
+  $('.bgimg-url').on('click', function(e) {
+    e.preventDefault();
+    var url = $('#bgimg-input').val();
+    $('#textBox').css('background-image', 'url('+url+')');
+  });
+  
+  //keeps focus on highlighted text if user clicks on tab of color picker
+  $('.tab').wrap('<a href="#"></a>'); 
+  $('.color-preview').wrap('<a href="#"></a>'); 
+  $('.color-label').wrap('<a href="#"></a>'); 
+  $('.color-box').wrap('<a href="#"></a>');
+  
+  //grab html from div. set form to be memo's text
+  $('form').on('submit', function() {
+    $('input#memo-text').attr('value', $('#textBox').html());
+  });
+  
+})
+</script>

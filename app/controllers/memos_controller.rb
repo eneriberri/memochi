@@ -36,10 +36,25 @@ class MemosController < ApplicationController
   end
   
   def edit
+    render :edit
   end
   
   def update
+    @memo = Memo.find(params[:id])
     
+    if @memo.update_attributes(params[:memo])
+      render :show
+    else
+      render :json => "uh oh"
+    end
+      
+  end
+  
+  def destroy
+    @memo = Memo.find(params[:id])
+    @memo.destroy
+    
+    redirect_to user_url(current_user)
   end
   
 end
