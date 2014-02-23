@@ -1,29 +1,3 @@
-<style>
-
-#top, #bottom, #left, #right {
-  background: #fff;
-  position: fixed;
-}
-#left, #right {
-  top: 0; bottom: 0;
-  width: 20px;
-}
-#left { left: 0; }
-#right { right: 0; }
-		
-#top, #bottom {
-  left: 0; right: 0;
-  height: 20px;
-}
-#top { top: 0; }
-#bottom { bottom: 0; }
-
-body {
-  padding-top: 30px;
-}
-
-</style>
-
 <% unless current_user %>
   <%= link_to "Log In", new_session_url %>
 <% else %>

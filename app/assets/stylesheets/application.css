@@ -63,3 +63,27 @@ input, .button {
 body {
   padding: 30px 0 30px !important;
 }
+
+
+/*STICKY!!*/
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 20px; /* bottom = footer height */
+    padding: 30px 30px 30px 30px;
+    position: static !important;
+}
+#bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    background-color: white;
+}
+
+#top {
+  position: absolute;
+}
