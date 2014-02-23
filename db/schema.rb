@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140214044534) do
+ActiveRecord::Schema.define(:version => 20140222072249) do
 
   create_table "memos", :force => true do |t|
     t.string   "text"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20140214044534) do
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.string   "bg"
   end
 
   add_index "memos", ["user_id"], :name => "index_memos_on_user_id"

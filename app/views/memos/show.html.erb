@@ -1,4 +1,9 @@
-<%= @memo.text %>
+<style>
+  .memo-content {
+    background-image: url(<%= @memo.bg %>);
+  }
+</style>
+
 <div class="memo-content">
   <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 
                   'div', 'blockquote', 'br', 'img', 'font'] %>

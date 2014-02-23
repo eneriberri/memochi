@@ -1,26 +1,64 @@
+<style>
+
+#top, #bottom, #left, #right {
+  background: #fff;
+  position: fixed;
+}
+#left, #right {
+  top: 0; bottom: 0;
+  width: 20px;
+}
+#left { left: 0; }
+#right { right: 0; }
+		
+#top, #bottom {
+  left: 0; right: 0;
+  height: 20px;
+}
+#top { top: 0; }
+#bottom { bottom: 0; }
+
+body {
+  padding-top: 30px;
+}
+
+</style>
+
+<% unless current_user %>
+  <%= link_to "Log In", new_session_url %>
+<% else %>
+  Hi, <%= current_user.email %>.
+  <br>
+  <%= link_to "Log Out", session_url, :method => :delete %>
+  <p></p>
+<% end %>
+
 <h1>Memochi</h1>
 
 <div class="row">
-  <div class="large-4 columns pusher">.</div>
-  <div class="large-4 columns">
+  <div class="small-4 small-centered columns">
     <form action="<%= users_url %>" method="POST" accept-charset="utf-8">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="email" name="user[email]" id="email" placeholder="Email" autofocus>
+      <input type="email" name="user[email]" id="email" placeholder="Email" autocomplete="off" autofocus>
 
-      <input type="password" name="user[password]" id="password" placeholder="Password">
+      <input type="password" name="user[password]" id="password" placeholder="Password" autocomplete="off">
       
-      <p><input type="submit" value="Sign Up" class="button tiny"></p>
+      <p><input type="submit" value="Sign Up" class="button tiny expand"></p>
     </form>
   </div>
 
-<div class="large-4 columns pusher">.</div>
 
 </div>
 
 
-<div class="row">
+<!-- <div class="row">
   <img src="/assets/hourglass.png" id="hg">
-</div>
+</div> -->
+
+
+
+
+
 <script>
 $(document).ready(function() {
   $('#hg').css('height', window.innerHeight);

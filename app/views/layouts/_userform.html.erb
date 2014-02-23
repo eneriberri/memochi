@@ -1,12 +1,15 @@
-<form action="<%= url %>" method="<%= method %>">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<div class="row">
+  <div class="small-3 small-centered columns">
+    <form action="<%= url %>" method="<%= method %>">
+      <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
   
-  <label for="email">Email</label>
-  <input type="text" name="user[email]" id="email">
+      <input type="text" name="user[email]" placeholder="Email">
   
-  <label for="password">Password</label>
-  <input type="password" name="user[password]" id="password">
+      <input type="password" name="user[password]" placeholder="Password">
   
-  <input type="submit" value="<%= submit %>">
+      <input type="submit" class="button" value="<%= submit %>">
+    </form>
+</div>
   
-</form>
+
+</div>

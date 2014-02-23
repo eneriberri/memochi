@@ -14,17 +14,14 @@
 
   <body>
     <div class="row">
-    <% unless current_user %>
-      <%= link_to "Log In", new_session_url %>
-    <% else %>
-      Hi, <%= current_user.email %>.
-      <br>
-      <%= link_to "Log Out", session_url, :method => :delete %>
-      <p></p>
-    <% end %>
-
-    <%= yield %>
+      <%= yield %>
     </div>
+    
+    <!-- page border -->
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="top"></div>
+    <div id="bottom"></div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -19,9 +19,47 @@
 
 body {
   text-align: center;
-  color: #efefef !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #efefef !important;
+*:focus { outline:none !important; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/*rounded corners*/
+input, .button {
+  -webkit-border-radius: 5px !important;
+  -moz-border-radius: 5px !important!;
+  border-radius: 5px !important;
+}
+
+/*body border*/
+#top, #bottom, #left, #right {
+  background: #fff;
+  position: fixed;
+}
+
+#top {
+  position: absolute;
+}
+
+#left, #right {
+  top: 0; bottom: 0;
+  width: 20px;
+}
+
+#left { left: 0; }
+#right { right: 0; }
+		
+#top, #bottom {
+  left: 0; right: 0;
+  height: 20px;
+}
+
+#top { top: 0; }
+#bottom { bottom: 0; }
+
+body {
+  padding: 30px 0 30px !important;
 }

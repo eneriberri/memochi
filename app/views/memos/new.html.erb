@@ -8,8 +8,7 @@
     <input type="hidden" name="myDoc">
     <div id="toolBar1">
       <div class="row">
-        <div class="large-3 columns pusher">.</div>
-        <div class="large-6 columns">         
+        <div class="small-6 large-centered columns">         
          <!-- Font Face -->
          <nav class="top-bar" data-topbar>
            <section class="top-bar-section">
@@ -92,7 +91,7 @@
                    <li class="has-dropdown not-click">
                      <a href="#">Insert Image From URL</a>
                      <ul class="dropdown">
-                       <li><input id="bgimg-input" type="text" placeholder="Paste URL here..." style="display: inline-block"><button class="tiny bgimg-url" style="display: inline-block">Enter</button></li>
+                       <li><input id="bgimg-input" type="text" name="memo[bg]" placeholder="Paste URL here..." style="display: inline-block"><button class="tiny bgimg-url" style="display: inline-block">Enter</button></li>
                      </ul>
                    </li>
                  </ul>
@@ -125,14 +124,12 @@
       
        </div>
     
-        <div class="large-3 columns pusher">.</div>
-    
+     </div>
     </div>
     <br>
     <div class="row">
-      <div class="large-3 columns pusher">.</div>
-      <div class="large-6 columns">
-    <div id="toolBar2">
+      <div class="small-6 large-centered columns">
+        <div id="toolBar2">
     <a class="icon" href="#"><i class="fa fa-bold" onclick="formatDoc('bold');"></i></a>
     <a class="icon" href="#"><i class="fa fa-italic" onclick="formatDoc('italic');"></i></a>
     <a class="icon" href="#"><i class="fa fa-underline" onclick="formatDoc('underline');"></i></a>
@@ -147,12 +144,14 @@
     <a class="icon" href="#"><i class="fa fa-upload"></i></a> 
     </div>
   </div>
-  <div class="large-3 columns pusher">.</div>
 </div>
 
-    <div id="textBox" contenteditable="true" autofocus><span style="color:#bababa;">Write your memo here.</span></div>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <div id="textBox" contenteditable="true"><span style="color:#333;">Write your memo here.</span></div>
     <input type="hidden" name="memo[text]" id="memo-text">
-  
+  </div>
+</div>
    
    <!-- TAGS: to do -->
    <!-- <div class="row">
@@ -168,23 +167,52 @@
   
   
   <div class="row">
-     <div class="large-3 columns pusher">.</div>
     <div class="large-3 columns">
       <label for="private" class="right">Private?</label>
     </div>
-  <div class="large-3 columns">
-    <input type="checkbox" name="memo[private]" value="true" id="private" class="left">
-  </div>
+    <div class="large-3 columns">
+      <input type="checkbox" name="memo[private]" value="true" id="private" class="left">
+    </div>
    <div class="large-3 columns pusher">.</div>
   </div>
   
-  <div id="test"></div>
 
   <p><input type="submit" value="Create Memo" class="button"></p>
 </form>
 
 
+<p>
+  :[]
 
+  <p>
+    :[]
+
+    <p>
+      :[]
+
+      <p>
+        :[]
+
+        <p>
+          :[]
+
+          <p>
+            :[]
+
+            <p>
+              :[]
+
+              <p>
+                :[]
+
+                <p>
+                  :[]
+
+                  <p>
+                    :[]
+
+                    <p>
+                      :[]
 <script>
 var oDoc, sDefTxt;
 
@@ -241,7 +269,6 @@ $(document).ready(function() {
   $('.bgimg-url').on('click', function(e) {
     e.preventDefault();
     var url = $('#bgimg-input').val();
-    console.log(url);
     $('#textBox').css('background-image', 'url('+url+')');
   });
   
