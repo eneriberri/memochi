@@ -1,6 +1,20 @@
-<h1>All Memos</h1>
+<h1>Memochis</h1>
 
-<% @memos.each do |memo| %>
-  <%= memo.text %>
-  <br>
-<% end %>
+<div class="row">
+  <div class="small-8 columns">
+    <% @memos.each do |memo| %>
+      <% style_bg = memo.bg.nil? ? "" : "background-image: url("+memo.bg+")" %>
+      <div class="memo-content" style="<%= style_bg %>">
+        <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 
+                        'div', 'blockquote', 'br', 'img', 'font'] %>
+        <%= sanitize memo.text, tags: safe_tags, attributes: %w(style face size color src) %>
+      </div>
+      <p></p>
+    <% end %> 
+  </div> 
+  <div class="small-4 columns">
+    Sidebar
+    <p></p>
+    Search by tag:
+  </div>  
+</div>

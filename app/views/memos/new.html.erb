@@ -1,5 +1,7 @@
 <h1>Create Memo</h1>
 
+<%= render './layouts/userform', :url => memos_url, :method => "POST", :submit => "Create Memo"  %>
+
 <form action="<%= memos_url %> " method="POST" accept-charset="utf-8">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   
@@ -166,7 +168,7 @@
    </div> -->
   
   
-  <div class="row">
+  <!-- <div class="row">
     <div class="large-3 columns">
       <label for="private" class="right">Private?</label>
     </div>
@@ -174,45 +176,18 @@
       <input type="checkbox" name="memo[private]" value="true" id="private" class="left">
     </div>
    <div class="large-3 columns pusher">.</div>
-  </div>
+  </div> -->
   
 
   <p><input type="submit" value="Create Memo" class="button"></p>
 </form>
 
-
-<p>
-  :[]
-
-  <p>
-    :[]
-
-    <p>
-      :[]
-
-      <p>
-        :[]
-
-        <p>
-          :[]
-
-          <p>
-            :[]
-
-            <p>
-              :[]
-
-              <p>
-                :[]
-
-                <p>
-                  :[]
-
-                  <p>
-                    :[]
-
-                    <p>
-                      :[]
+<div class="row">
+    <% flash.each do |name, msg| %>
+      <%= name %>: <%= msg %>
+      <p></p>
+    <% end %>
+</div>
 <script>
 var oDoc, sDefTxt;
 

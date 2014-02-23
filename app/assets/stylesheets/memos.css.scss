@@ -19,12 +19,10 @@ $bar-border-color: #fff;
   height: $textarea-size - 70px;
   overflow: hidden;
   font-size: $textarea-font-size;
-  margin: 0 auto;
   box-shadow: none;
   transition: none;
   text-align: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0 10px;
   color: #222222;
   padding: 7px;
   background-color: white !important;
@@ -36,6 +34,10 @@ $bar-border-color: #fff;
     box-shadow: none;
     transition: none;
   }
+}
+
+.memo-content {
+  margin: 0 auto;
 }
 
 .pusher {
@@ -89,16 +91,15 @@ a {
 }
 
 .icon {
-  color: #3d3d3d;
+  color: #333;
   margin: 0 5px 0 5px;
-  &:hover {
-   color: #595959; 
-  }
 }
 
 #toolBar2 {
   background-color: $bar-border-color;
   padding: 7px;
+  border-top: 1px solid black;
+  margin-top: -10px;
 }
 
 input.pick-a-color, .hex-pound.add-on {
@@ -156,10 +157,6 @@ ul.left {
 //override foundation margin
 .top-bar {
   margin-bottom: -10px;
-}
-
-#toolBar2 {
-  margin-top: -9px;
 }
 
 //show page

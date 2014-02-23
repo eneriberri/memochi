@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   validates :password, :length => {:minimum => 6, :allow_nil => true}
   
   has_many :memos
+  has_many :hearts
+  has_many :memos_liked, through: :hearts
+           # class_name: "Memo", foreign_id: "memo_id"
   
   def self.find_by_credentials(options)
     user = User.find_by_email(options[:email])
