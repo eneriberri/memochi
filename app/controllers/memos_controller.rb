@@ -36,6 +36,7 @@ class MemosController < ApplicationController
   end
   
   def edit
+    @memo = Memo.find(params[:id])
     render :edit
   end
   

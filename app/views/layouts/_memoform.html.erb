@@ -150,7 +150,17 @@
 
 <div class="row">
   <div class="small-6 large-centered columns">
-    <div id="textBox" contenteditable="true"><span style="color:#333;">Write your memo here.</span></div>
+    <% if method == "PUT" %>
+    <% style_bg = @memo.bg.nil? ? "" : "background-image: url("+@memo.bg+")" %>
+    <div id="textBox" contenteditable="true" style="<%= style_bg %>">
+      <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 
+                      'div', 'blockquote', 'br', 'img', 'font'] %>
+      <%= sanitize @memo.text, tags: safe_tags, attributes: %w(style face size color src) %>
+    </div>
+    <% else %>
+      <div id="textBox" contenteditable="true"><span style="color:#333;">Write your memo here.</span></div>
+    
+    <% end %>
     <input type="hidden" name="memo[text]" id="memo-text">
   </div>
 </div>
@@ -204,11 +214,6 @@ function formatDoc(sCmd, sValue) {
 
 $(document).ready(function() {
   initDoc();
-  
-  $('#textBox').keypress(function(e) {
-    $(this).empty();
-    $(this).unbind('keypress');
-  });
   
   $('.font-drop').on('click', 'li', function(e) {
     var fontName = $(e.target).text();

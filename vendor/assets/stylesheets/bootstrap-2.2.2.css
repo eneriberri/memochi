@@ -2110,7 +2110,7 @@ table td[class*="span"], table th[class*="span"], .row-fluid table td[class*="sp
 .fade.in {
     opacity: 1;
 }
-.collapse {
+/*.collapse {
     position: relative;
     height: 0;
     overflow: hidden;
@@ -2121,7 +2121,7 @@ table td[class*="span"], table th[class*="span"], .row-fluid table td[class*="sp
 }
 .collapse.in {
     height: auto;
-}
+}*/
 .close {
     float: right;
     font-size: 20px;

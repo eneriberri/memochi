@@ -1,3 +1,12 @@
 <h1>Create Memo</h1>
 
 <%= render './layouts/memoform', :url => memos_url, :method => "POST", :submit => "Create Memo"  %>
+
+<script>
+$(document).ready(function() {
+  $('#textBox').keypress(function(e) {
+    $(this).empty();
+    $(this).unbind('keypress');
+  });
+})
+</script>

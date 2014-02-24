@@ -5,9 +5,19 @@
   <%= sanitize @memo.text, tags: safe_tags, attributes: %w(style face size color src) %>
 </div>
 <p></p>
-<a href="<%= new_memo_url %>"><button class="small">Create New Memo</button></a>
-<%= button_to "Edit Memo", edit_memo_url(@memo), :method => :get, :class => ["button", "small"] %>
-<%= button_to "Delete Memo", memo_url(@memo), :method => :delete, :class => ["button", "small"] %>
+<div class="row">
+  <div class="small-6 large-centered columns">
+  <div class="small-4 columns">
+  <%= button_to "Edit Memo", edit_memo_url(@memo), :method => :get, :class => ["button", "small"] %>
+  </div>
+  <div class="small-4 columns">
+  <%= button_to "Delete Memo", memo_url(@memo), :method => :delete, :class => ["button", "small"] %>
+  </div>
+  <div class="small-4 columns">
+    <a href="<%= new_memo_url %>"><button class="small">New Memo</button></a>
+  </div>
+  </div>
+</div>
  
 <script>
 $(document).ready(function() {

@@ -1,35 +1,52 @@
-<% unless current_user %>
-  <%= link_to "Log In", new_session_url %>
-<% else %>
-  Hi, <%= current_user.email %>.
-  <br>
-  <%= link_to "Log Out", session_url, :method => :delete %>
-  <p></p>
-<% end %>
+<style>
+  body {
+    background-image: url('./assets/background-image.png');
+  }
 
-<h1>Memochi</h1>
-
-<div class="row">
-  <div class="small-4 small-centered columns">
+  .login-area {
+    background-color: rgba(255, 255, 255, 0.65);
+    width: 350px;
+    border-radius: 5px;
+  }
+  
+  input {
+    margin-bottom: 9px !important;
+  }
+  
+  input[type=submit] {
+    margin-bottom: -5px !important;
+  }
+  /*body border*/
+  #top, #bottom, #left, #right {
+    opacity: .65;
+  }
+</style>
+<div class="row login-area collapse">
+  <h1>memochi</h1>
+  <div class="small-9 small-centered columns">
     <form action="<%= users_url %>" method="POST" accept-charset="utf-8">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="email" name="user[email]" id="email" placeholder="Email" autocomplete="off" autofocus>
+      <input type="email" name="user[email]" placeholder="Email" autocomplete="off" autofocus>
 
-      <input type="password" name="user[password]" id="password" placeholder="Password" autocomplete="off">
+      <input type="password" name="user[password]" placeholder="Password" autocomplete="off">
+      
+      <input type="text" name="user[username]" placeholder="Username" autocomplete="off">
       
       <p><input type="submit" value="Sign Up" class="button tiny expand"></p>
     </form>
+    <% unless current_user %>
+      <%= link_to "Log In", new_session_url %>
+    <% else %>
+      Hi, <%= current_user.email %>.
+      <br>
+      <%= link_to "Log Out", session_url, :method => :delete %>
+      <p></p>
+    <% end %>
+    <p style="padding-bottom: 10px;"></p>
   </div>
 
 
 </div>
-
-
-<!-- <div class="row">
-  <img src="/assets/hourglass.png" id="hg">
-</div> -->
-
-
 
 
 
