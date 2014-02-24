@@ -58,4 +58,15 @@ class MemosController < ApplicationController
     redirect_to user_url(current_user)
   end
   
+  
+  def tagged
+    if params[:tag].present? 
+      @memos = Memo.tagged_with(params[:tag])
+    else 
+      @memos = Memo.all
+    end 
+    
+    render :index 
+  end
+  
 end

@@ -4,4 +4,6 @@ Memochi::Application.routes.draw do
   resources :users
   resources :memos
   resource :session, :only => [:new, :create, :destroy]
+  
+  match 'tagged' => 'memos#tagged', :as => 'tagged'
 end

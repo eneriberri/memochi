@@ -6,6 +6,12 @@
 </div>
 <p></p>
 <div class="row">
+  <% @memo.tags.any? %>
+    <% @memo.tags.each do |tag| %>
+    <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+  <% end %>
+</div>
+<div class="row">
   <div class="small-6 large-centered columns">
   <div class="small-4 columns">
   <%= button_to "Edit Memo", edit_memo_url(@memo), :method => :get, :class => ["button", "small"] %>

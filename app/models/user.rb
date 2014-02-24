@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password
+  attr_accessible :email, :password, :username
   attr_reader :password
   
   before_validation :reset_session_token
   
   validates :email, :password_digest, :session_token, :presence => true
   validates :password, :length => {:minimum => 6, :allow_nil => true}
+  validates :email, :username, :uniqueness => true
   
   has_many :memos
   has_many :hearts

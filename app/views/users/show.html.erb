@@ -1,7 +1,7 @@
 <% unless current_user %>
   <%= link_to "Log In", new_session_url %>
 <% else %>
-  Hi, <%= current_user.email %>.
+  Hi, <%= current_user.username %>.
   <br>
   <%= link_to "Log Out", session_url, :method => :delete %>
   <p></p>
@@ -9,6 +9,18 @@
 
 <div class="row">
   <div class="small-9 columns">
+    <h2>Your Memo Stream</h2>
+  <% if @user.memos.empty? %>
+      You haven't created any memos yet.
+      <br>
+      <a href="<%= new_memo_url %>">Create one now.</a>
+      <br>
+      -or-
+      <br>
+      <a href="<%= memos_url %>">Browse created memos.</a>
+  <% end %>
+  
+  
   <% @user.memos.each do |memo| %>
     <% style_bg = memo.bg.nil? ? "" : "background-image: url("+memo.bg+")" %>
     <div class="memo-content" style="<%= style_bg %>">
@@ -33,6 +45,7 @@
   </div>
   
   <div class="small-3 columns">
+    <h2>Navigate</h2>
     <%= render './layouts/sidebar' %>
   </div>  
 </div>

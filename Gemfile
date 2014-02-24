@@ -35,3 +35,4 @@ gem 'foundation-rails'
 gem 'font-awesome-sass'
 gem "paperclip", "~> 4.1"
 gem 'jquery-ui-rails'
+gem 'acts-as-taggable-on'
