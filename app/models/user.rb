@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   has_many :memos
   has_many :hearts
-  has_many :memos_liked, through: :hearts, source: :memo
+  # has_many :memos_liked, through: :hearts, source: :memo
            # class_name: "Memo", foreign_id: "memo_id"
   
   def self.find_by_credentials(options)

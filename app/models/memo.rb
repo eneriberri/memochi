@@ -7,5 +7,5 @@ class Memo < ActiveRecord::Base
   
   belongs_to :user
   has_many :hearts
-  has_many :users_who_liked, through: :hearts, source: :user
+  # has_many :users_who_liked, through: :hearts, source: :user
 end
