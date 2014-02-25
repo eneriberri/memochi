@@ -1,3 +1,6 @@
+memo bg
+<%= @memo.bg %>
+
 <% style_bg = @memo.bg.nil? ? "" : "background-image: url("+@memo.bg+")" %>
 <div class="memo-content" style="<%= style_bg %>">
   <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 

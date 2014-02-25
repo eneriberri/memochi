@@ -16,7 +16,7 @@ $bar-border-color: #fff;
 
 #textBox, .memo-content {
   border: 2px solid $bar-border-color;
-  width: $textarea-size + 5px;
+//  width: $textarea-size + 5px;
   height: $textarea-size - 70px;
   overflow: hidden;
   font-size: $textarea-font-size;
@@ -38,12 +38,8 @@ $bar-border-color: #fff;
 }
 
 .memo-content {
+  width: $textarea-size - 10px;
   margin: 0 auto;
-}
-
-.pusher {
-  color: #e2e2e2;
-  text-indent: -9999px;
 }
 
 select {
@@ -119,12 +115,12 @@ input.pick-a-color, .hex-pound.add-on {
   padding: 0;
   background-image: none;
   background-color: $bar-border-color;
-  padding-right: 8px;
+  padding-right: 3px;
 }
 
 //for the color dropdown to display properly
 //in the nav bar
-.advanced-list li {
+.advanced-list li, li.color-item {
   clear: both;
 }
 
@@ -163,4 +159,8 @@ ul.left {
 //show page
 .memo-content {
   font-size: $textarea-font-size;
+}
+
+input#tags {
+  border: none;
 }

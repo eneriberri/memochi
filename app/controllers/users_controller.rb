@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  def new
-    render :new
-  end
   
   def show
     @user = User.includes(:memos).find(params[:id])
@@ -14,7 +11,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash.now[:errors] = @user.errors.full_messages
-      render :new
+      render :json => "Ruh roh. Something went wrong."
     end
   end
 end

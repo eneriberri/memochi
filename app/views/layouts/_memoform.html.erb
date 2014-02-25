@@ -113,9 +113,7 @@
                <li>
                  <input type="text" value="fff" name="border-color" class="pick-a-color bgcolor-drop">
                </li> 
-               
-          
-               
+                              
                
          
              </ul>
@@ -163,21 +161,16 @@
     <% end %>
     <input type="hidden" name="memo[text]" id="memo-text">
     
-    <i class="fa fa-tags"></i><input type="text" name="memo[tag_list]">
+    <div class="row">
+      <div class="small-1 columns">
+        <label for="tags" class="right inline"><i class="fa fa-tags"></i></label>
+      </div>
+      <div class="small-11 columns">
+      <input type="text" id="tags" name="memo[tag_list]" placeholder="Insert any tags here separated by commas...">
+      </div>
+    </div>
   </div>
 </div>
-   
-   <!-- TAGS: to do -->
-   <!-- <div class="row">
-      <div class="large-3 columns pusher">.</div>
-     <div class="large-1 columns">
-          <i class="fa fa-tags"></i>
-     </div>
-   <div class="large-5 columns">
-     <input type="text" name="memo[tag]" placeholder="Insert any tags here separated by commas..." id="private" class="left">
-   </div>
-    <div class="large-3 columns pusher">.</div>
-   </div> -->
   
   
   <!-- <div class="row">
@@ -228,9 +221,10 @@ $(document).ready(function() {
     var fontSize = $(e.target).data('val');
     formatDoc('fontsize',fontSize);
   });  
-  
+   
+  //pick a color drop down
   $(".pick-a-color").pickAColor({showBasicColors: false, showSavedColors: false});
-  
+    
   $(".fontcolor-drop").on('change', function(e) {
     var bgColor = $(e.target).val();
     formatDoc('forecolor',bgColor);
@@ -249,6 +243,13 @@ $(document).ready(function() {
     img.wrap('<div class="wrapper" style="display: inline-block;"></div>');
     img.resizable();    
   });
+  
+  $('#bgimg-input').on('keypress', function(e) {
+    if(e.which == 13) {
+      var url = $('#bgimg-input').val();
+      $('#textBox').css('background-image', 'url('+url+')');
+    }
+  })
   
   $('.bgimg-url').on('click', function(e) {
     e.preventDefault();

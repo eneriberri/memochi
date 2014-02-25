@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
   
   has_many :memos
   has_many :hearts
-  has_many :memos_liked, through: :hearts
+  has_many :memos_liked, through: :hearts, source: :memo
            # class_name: "Memo", foreign_id: "memo_id"
   
   def self.find_by_credentials(options)
-    user = User.find_by_email(options[:email])
+    user = User.find_by_username(options[:username])
     return user if user && user.is_password?(options[:password])
     nil
   end

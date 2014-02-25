@@ -1,7 +1,7 @@
 Memochi::Application.routes.draw do
   root :to => "StaticPages#index"
   
-  resources :users
+  resources :users, :except => :new
   resources :memos
   resource :session, :only => [:new, :create, :destroy]
   
