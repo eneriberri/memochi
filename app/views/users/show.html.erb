@@ -11,6 +11,7 @@
   <div class="small-9 columns">
     <h2>Your Memo Stream</h2>
   <% if @user.memos.empty? %>
+    <div class="empty-area">
       You have 0 memos.
       <br>
       <a href="<%= new_memo_url %>">Create one now.</a>
@@ -18,6 +19,7 @@
       -or-
       <br>
       <a href="<%= memos_url %>">Browse others' memos.</a>
+    </div>
   <% end %>
   
   

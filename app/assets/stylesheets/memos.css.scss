@@ -9,7 +9,7 @@ $textarea-font-size: 24px;
 
 body {
   background-color: #efefef;
-//  background-image: url('background-image.png');
+  background-image: url('/assets/noise.png');
 }
 
 $bar-border-color: #fff;
@@ -163,4 +163,11 @@ ul.left {
 
 input#tags {
   border: none;
+}
+
+.empty-area {
+  background-color: rgba(255, 255, 255, 0.65);
+  width: 200px;
+  padding: 15px;
+  margin: 0 auto;
 }
