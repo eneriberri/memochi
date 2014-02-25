@@ -30,7 +30,7 @@ input:-webkit-autofill {
 /*rounded corners*/
 input, .button, button {
   -webkit-border-radius: 5px !important;
-  -moz-border-radius: 5px !important!;
+  -moz-border-radius: 5px !important;
   border-radius: 5px !important;
 }
 
