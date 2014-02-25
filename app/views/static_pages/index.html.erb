@@ -15,6 +15,10 @@
     margin-left: -175px; /*negative half of width*/
   }
   
+  .tagline {
+    color: #a3a3a3;
+  }
+  
   input {
     margin-bottom: 9px !important;
   }
@@ -26,7 +30,11 @@
   #top, #bottom, #left, #right {
     opacity: .65;
   }
+
 </style>
+<div class="row collapse">
+
+</div>
 <div class="row login-area collapse">
   <h1>memochi</h1>
   <div class="small-9 small-centered columns">
@@ -40,17 +48,12 @@
       
       <p><input type="submit" value="Sign Up" class="button tiny expand"></p>
     </form>
-    <% unless current_user %>
-      <%= link_to "Log In", new_session_url %>
-    <% else %>
-      Hi, <%= current_user.email %>.
-      <br>
-      <%= link_to "Log Out", session_url, :method => :delete %>
-      <p></p>
-    <% end %>
-    <p style="padding-bottom: 10px;"></p>
+     <u><%= link_to "Log In", new_session_url %></u>
+    <p style="padding-bottom: 15px;"></p>
+    <div class="small-9 small-centered columns tagline">
+      <i>Beautiful memos</i>
+    </div> 
   </div>
-
 
 </div>
 
@@ -59,6 +62,23 @@
 <script>
 $(document).ready(function() {
   $('#hg').css('height', window.innerHeight);
+  
+  
+  //fade the tagline beneath login area
+  function fadeTagline() {
+    var tagLine = ['created by you.', '<u><a href="#" style="color: #a3a3a3;">See inspiration</a></u>', 'Beautiful memos'];
+    var i = 0;
+    var id = setInterval(function() {
+      $('.tagline').fadeOut("slow", function() {
+        $('.tagline').html('<i>'+tagLine[i]+'</i>').fadeIn("slow");
+        i++;
+        if(i === tagLine.length - 1) clearInterval(id);
+      });
+    }, 3000);
+  }
+  
+  fadeTagline();
+
   
 })
 </script>
