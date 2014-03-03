@@ -2,7 +2,7 @@ memochi
 ========
 A web application to create customized beautiful memos.
 
-http://pollcat.me
+http://glacial-gorge-2760.herokuapp.com/
 
 ![ScreenShot](/app/assets/images/screenshot01.png)
 
