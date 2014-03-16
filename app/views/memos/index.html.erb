@@ -1,20 +1,26 @@
 <h1>Memochis</h1>
-
+  <div class="row">
+    <div class="small-6 large-centered columns">
+        <div class="row collapse">
+      <div class="small-9 columns">
+        <input type="text" placeholder="Search by tag..." style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important">
+      </div>
+      <div class="small-3 columns">
+        <a href="#" class="button expand tiny" style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important"><i class="fa fa-search"></i></a>
+      </div>
+      </div>
+    </div>
+  </div>
+  
 <div class="row">
-  <div class="small-8 columns">
+  <div class="small-12 columns">
     <% @memos.each do |memo| %>
       <% style_bg = memo.bg.nil? ? "" : "background-image: url("+memo.bg+")" %>
-      <div class="memo-content" style="<%= style_bg %>">
+      <div class="memo-content index" style="<%= style_bg %>">
         <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 
                         'div', 'blockquote', 'br', 'img', 'font'] %>
         <%= sanitize memo.body, tags: safe_tags, attributes: %w(style face size color src) %>
       </div>
-      <p></p>
     <% end %> 
   </div> 
-  <div class="small-4 columns">
-    Sidebar
-    <p></p>
-    Search by tag:
-  </div>  
 </div>

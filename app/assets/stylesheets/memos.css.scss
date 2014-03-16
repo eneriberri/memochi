@@ -159,6 +159,10 @@ ul.left {
 //show page
 .memo-content {
   font-size: $textarea-font-size;
+  &.index {
+    float: left;
+    margin: 5px;
+  }
 }
 
 input#tags {
@@ -171,3 +175,4 @@ input#tags {
   padding: 15px;
   margin: 0 auto;
 }
+
