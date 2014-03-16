@@ -1,3 +1,11 @@
+<style>
+  h1 {
+    letter-spacing: 3px;
+  }
+
+</style>
+
+<h1>Your Memo</h1>
 <% style_bg = @memo.bg.nil? ? "" : "background-image: url("+@memo.bg+")" %>
 <div class="memo-content" style="<%= style_bg %>">
   <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 
@@ -12,17 +20,21 @@
     <%= link_to tag.name, tagged_url(:tag => tag.name) %>
   <% end %>
 </div>
-
+<p></p>
 <div class="row">
   <div class="small-6 large-centered columns">
   <div class="small-4 columns">
-  <%= button_to "Edit Memo", edit_memo_url(@memo), :method => :get, :class => ["button", "small"] %>
+  <%= button_to "Edit Memo", edit_memo_url(@memo), :method => :get, :class => ["button", "tiny"] %>
   </div>
   <div class="small-4 columns">
-  <%= button_to "Delete Memo", memo_url(@memo), :method => :delete, :class => ["button", "small"] %>
+  <%= button_to "Delete Memo", memo_url(@memo), :method => :delete, :class => ["button", "tiny"] %>
   </div>
   <div class="small-4 columns">
-    <a href="<%= new_memo_url %>"><button class="small">New Memo</button></a>
+     <%= button_to "New Memo", new_memo_url, :method=> :get, :class => ["button", "tiny"] %>
   </div>
   </div>
+</div>
+
+<div class="row">
+  <%= button_to "Browse All Memos", memos_url, :method=> :get, :class => ["button", "tiny"] %>
 </div>
