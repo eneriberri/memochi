@@ -1,3 +1,14 @@
+<style>
+body {
+  background-color: #fafafa !important;
+  background-image: none !important;
+}
+
+.hidden-prompt {
+  visibility: hidden;
+}
+
+</style>
 <h1>Recently Created Memos</h1>
   <div class="row">
     <div class="small-6 large-centered columns">
@@ -10,6 +21,10 @@
       </div>
       </div>
     </div>
+    <span class="hidden-prompt">
+        Search by tag feature coming soon...
+        <p></p>
+    </span>
   </div>
   
   
@@ -27,3 +42,11 @@
     <% end %> 
   </div> 
 </div>
+
+<script>
+  $(document).ready(function() {
+    $('a.button').on('click', function() {
+       $('.hidden-prompt').css('visibility','visible').hide().fadeIn('slow');
+    });
+  });
+</script>
