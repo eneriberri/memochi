@@ -16,11 +16,13 @@
   <div class="small-12 columns">
     <% @memos.each do |memo| %>
       <% style_bg = memo.bg.nil? ? "" : "background-image: url("+memo.bg+")" %>
+      <a href="<%=memo_url(memo.id) %>">
       <div class="memo-content index" style="<%= style_bg %>">
         <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 
                         'div', 'blockquote', 'br', 'img', 'font'] %>
         <%= sanitize memo.body, tags: safe_tags, attributes: %w(style face size color src) %>
-      </div>
+        
+      </div></a>
     <% end %> 
   </div> 
 </div>

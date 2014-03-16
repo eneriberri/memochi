@@ -2,17 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//body {
-//  background-image: url('background-image.png');
-//}
-//
-//.login-area {
-//  background-color: rgba(255, 255, 255, 0.65);
-//  width: 350px;
-//  border-radius: 5px;
-//}
-//
-///*body border*/
-//#top, #bottom, #left, #right {
-//  opacity: .65;
-//}
+.login-area {
+  height: 400px;
+  position: relative;
+  top: 50%;
+  margin-top: 200px;
+}
