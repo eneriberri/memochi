@@ -1,3 +1,16 @@
+<style>
+  h2 {
+    padding-bottom: 20px;
+    letter-spacing: 3px;
+  }
+  
+  #new-memo:after {
+    content: ' | ';
+    color: #d8d8d8;
+  }
+  
+</style>
+
 <% unless current_user %>
   <%= link_to "Log In", new_session_url %>
 <% else %>
@@ -13,12 +26,9 @@
   <% if @user.memos.empty? %>
     <div class="empty-area">
       You have 0 memos.
-      <br>
-      <a href="<%= new_memo_url %>">Create one now.</a>
-      <br>
-      -or-
-      <br>
-      <a href="<%= memos_url %>">Browse others' memos.</a>
+      <hr>
+      <a id="new-memo" href="<%= new_memo_url %>">Create one now</a>
+      <a href="<%= memos_url %>">Browse others' memos</a>
     </div>
   <% end %>
   
