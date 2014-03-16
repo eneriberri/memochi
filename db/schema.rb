@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140316014914) do
+ActiveRecord::Schema.define(:version => 20140316015527) do
 
   create_table "hearts", :force => true do |t|
     t.integer  "user_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20140316014914) do
   add_index "hearts", ["user_id"], :name => "index_hearts_on_user_id"
 
   create_table "memos", :force => true do |t|
-    t.text     "text"
+    t.text     "body"
     t.boolean  "private",    :default => false
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false

@@ -1,7 +1,7 @@
 class Memo < ActiveRecord::Base
-  attr_accessible :text, :private, :bg, :user_id, :tag_list
+  attr_accessible :body, :private, :bg, :user_id, :tag_list
   
-  validates :text, :user_id, :presence => true
+  validates :body, :user_id, :presence => true
   
   acts_as_taggable_on :tags
   

@@ -2,7 +2,7 @@
 <div class="memo-content" style="<%= style_bg %>">
   <% safe_tags = ['b', 'strong', 'i', 'em', 'u', 'strike', 
                   'div', 'blockquote', 'br', 'img', 'font'] %>
-  <%= sanitize @memo.text, tags: safe_tags, attributes: %w(style face size color src) %>
+  <%= sanitize @memo.body, tags: safe_tags, attributes: %w(style face size color src) %>
 </div>
 <p></p>
 <div class="row">
